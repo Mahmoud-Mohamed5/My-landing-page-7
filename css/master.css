@@ -1,0 +1,558 @@
+/* =============== GOOGEL FONTS ================ */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+/* =============== START GLOBAL STYLE ================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    width: 0px;
+}
+/*========= SMALL SCREEN ==============*/
+@media (min-width: 320px) and (max-width: 767px) {
+    .container {
+        width: calc(100vw - 7rem);
+    }
+}
+/*========= MEDIUM SCREEN ==============*/
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        width: calc(100vw - 12rem);
+    }
+}
+/*========= LARGE SCREEN ==============*/
+@media (min-width: 1024px) {
+    .container {
+        width: calc(100vw - 15rem);
+    }
+}
+.container {
+    margin: 0 auto;
+}
+
+.name__section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+    /* z-index: 88; */
+}
+.name__section h3 {
+    background-color: var(--second-color-text);
+    color: var(--second-color);
+    padding: 15px 25px;
+    border-radius: 10px;
+    transition: var(--main-transition);
+    margin-bottom: 2rem;
+    border: 2px solid ;
+}
+.name__section h3:hover {
+    color: var(--second-color-text);
+    background-color: var(--second-color);
+    border: 2px solid  var(--second-color-text);
+}
+
+/* =============== END GLOBAL STYLE =================== */
+
+/* =============== START VARIABLES STYLE ================ */
+:root {
+    --first-color: #ced4da; 
+    --second-color: #e9ecef;
+
+    --first-color-text: hsla(210, 11%, 15%, 0.8);
+    --second-color-text: #222;
+
+    --color-text: #f8f9fa;
+    --alt-color-text: hsla(214, 14%, 90%, 0.7);
+
+    --grad-f-color: hsl(186, 100%, 50%);
+    --grad-s-color: #1200ff;
+
+    --main-transition: 300ms;
+    --main-padding: 5rem;
+}
+/* =============== END VARIABLES STYLE ================ */
+/* =============== START VARIABLES DARK THEM ================ */
+body.dark {
+    --first-color: #333; 
+    --second-color: #222121;
+
+    --first-color-text: #ccc;
+    --second-color-text: #e9ecef;
+
+    --color-text: #212529;
+    --alt-color-text: hsl(214, 14%, 90%);
+}
+/* =============== END VARIABLES DARK THEM ================ */
+
+/* =============== START MAIN STYLE ================ */
+
+/* =============== START LOGO STYLE ================ */
+.logo {
+    position: absolute;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo .logo__parent{
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 100;
+    width: 80px;
+    height: 80px;
+    padding: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--second-color-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: rotate 6s linear infinite;
+}
+.logo .logo__parent img {
+    width: 80px;
+}
+
+#them {
+    position: fixed;
+    top: 20px;
+    right: 40px;
+    z-index: 999;
+    background-color: var(--second-color-text);
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+#them  i {
+    color: var(--color-text);
+    font-size: 20px;
+}
+/* =============== END LOGO STYLE ================ */
+/* =============== START NAV STYLE ================ */
+.main__nav nav {
+    height: 100vh;
+    position: fixed;
+    z-index: 88;
+}
+nav ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: fixed;
+    top: 0;
+    right: 45px;
+    justify-content: space-around;
+}
+nav ul li {
+    list-style: none;
+}
+nav ul li:not(:last-child):before {
+    content: "";
+    position: absolute;
+    right: -20px;
+    height: calc(100% / 5 - 50px);
+    width: 2px;
+    margin : 40px 0 ;
+    background-color: var(--second-color-text);
+}
+nav ul a {
+    text-decoration: none;
+    padding-right: 20px;
+    font-weight: 200;
+    color: var(--first-color-text);
+    font-weight: 800;
+    position: relative;
+    transition: var(--main-transition);
+}
+
+nav ul a::before,
+nav ul a::after {
+    transition: var(--main-transition);
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+nav ul a::before {
+    right: -35px;
+    border: 2px solid var(--second-color-text);
+}
+nav ul a::after {
+    top: 2px;
+    right: -33px;
+    transform:  scale(.0);
+    background-color: #00E5FF;
+}
+nav ul li:hover {
+    /* font-size: 25px; */
+    letter-spacing: 6px;
+}
+nav ul a:hover::after {
+    transform:  scale(.3);
+}
+nav ul li a.active {
+    font-size: 25px;
+    letter-spacing: 6px;
+}
+nav ul a.active::after {
+    transform:  scale(.7);
+}
+/* =============== END NAV STYLE ================ */
+/* =============== START HOME STYLE ================ */
+.home {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--first-color);
+    padding-top: var(--main-padding);
+    /* background-image: linear-gradient(-45deg, var(--first-color) , var(--second-color)); */
+}
+.landing__page {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.landing__page::before {
+    content: "";
+    width: 150%;
+    height: 200px;
+    background-color: var(--second-color);
+    transform-origin: top left;
+    transform: skew(45deg) rotate(-4deg);
+    position: absolute;
+    bottom: -20%;
+    left: -10%;
+}
+
+
+
+.landing__page .info h2{
+    margin-bottom: 10px;
+    color: var(--first-color-text);
+}
+.landing__page .info p {
+    color: var(--second-color-text);
+}
+.landing__page .img__parent-border {
+    width: 400px;
+    height: 550px;
+    border-radius: 100vw;
+    border: 1px solid var(--second-color-text);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.landing__page .img__parent {
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    background-image: linear-gradient(to bottom,  var(--grad-f-color), var(--grad-s-color));
+    border-radius: 100vw;
+    overflow: hidden;
+}
+.landing__page .img__parent img {
+    width: 600px;
+    position: relative;
+    left: -100px;
+    transition: var(--main-transition);
+}
+.landing__page .img__parent img:hover {
+    transform: translateY(-10px) scale(1.1);
+}
+.landing__page .social {
+    position: relative;
+    z-index: 3;
+    display: flex;
+}
+.landing__page .social a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 70px;
+    font-size: 30px;
+    color: var(--second-color-text);
+    transition: var(--main-transition);
+    border-radius: 50vw;
+    text-decoration: none;
+    margin-right: 10px;
+}
+.landing__page .social a:hover {
+    color: var(--color-text);
+    background-color: var(--second-color-text);
+}
+
+
+/* =============== END HOME STYLE ================ */
+/* =============== START ABOUT US STYLE ================ */
+.about-us {
+    background-color: var(--second-color);
+    padding: var(--main-padding) 0;
+    position: relative;
+    overflow: hidden;
+}
+.about-us__parent {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.about-us__parent .info h2{
+    margin-bottom: 1rem;
+    color: var(--first-color-text);
+}
+.about-us__parent .info h2 span{
+    color: #00e5ff;
+}
+.about-us__parent .info p {
+    color: var(--second-color-text);
+}
+.about-us__parent .img__parent-border {
+    width: 430px;
+    height: 530px;
+    border-radius: 50vw;
+    border: 2px solid var(--second-color-text);
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+.about-us__parent .img__parent {
+    width: 400px;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 0 0 50vw 50vw;
+    position: relative;
+    transition: var(--main-transition);
+}
+.about-us__parent .img__parent:hover {
+    height: 400px;
+} 
+.about-us__parent .img {
+    width: 400px;
+    height: 500px;
+    background-color: #1200ff;
+    background-image: linear-gradient(-115deg, var(--grad-f-color), var(--grad-s-color));
+    border-radius: 50vw;
+    position: relative;
+}
+
+.about-us__parent .img img{
+    width: 330px;
+    position: relative;
+    left: 50px;
+}
+.about-us__parent .contact a{
+    width: 150px;
+    height: 75px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    z-index: 89;
+}
+.about-us__parent .contact a::before {
+    content: "";
+    position: absolute;
+    width: calc(100% );
+    height: calc(100% );
+    background-image: linear-gradient(270deg, #00e1fd, #fc007a);
+    border-radius: 15px;
+    z-index: -1;
+    transition: var(--main-transition);
+}
+
+.about-us__parent .contact a:after {
+    content: "";
+    background-color: var(--second-color-text);
+    border-radius: 15px;
+    position: absolute;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    z-index: -1;
+}
+.about-us__parent .contact a i{
+    color: var(--color-text);
+    font-size: 1.7rem;
+}
+/* =============== END ABOUT US STYLE ================ *
+
+/* =============== START SKILLSSTYLE ================ */
+.skills {
+    width: 100%;
+    background-color: var(--first-color);
+    padding: var(--main-padding) 0;
+}
+.skills__parent {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+}
+.skills__parent .card {
+    width: 300px;
+    height: 400px;
+    border-radius: 50vw;
+    border: 2px solid var(--second-color-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--main-transition);
+}
+.skills__parent .card:hover {
+    background-color: var(--second-color-text);
+    border-color: var(--second-color-textr);
+    box-shadow: 40px 40px 0 var(--second-color-text);
+    transform: translate(-40px, -40px);
+}
+.skills__parent .card h2 {
+    font-size: 2rem;
+    color: var(--second-color-text);
+    transition: var(--main-transition);
+}
+.skills__parent .card:hover h2 {
+    color: var(--color-text);
+}
+
+
+/* =============== END SKILLS STYLE ================ */
+
+/* =============== START CONTACT STYLE ================ */
+.contact {
+    background-color: var(--second-color);
+    padding: var(--main-padding) 0;
+}
+.contact__parent {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.contact__parent .info h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--first-color-text);
+}
+.contact__parent .info .links__contact a i{
+    color: var(--color-text);
+    background-color: var(--second-color-text);
+    padding: 20px 20px;
+    border-radius: 20px;
+    font-size: 25px;
+    border: 2px solid var(--second-color-text);
+    transition: var(--main-transition);
+}
+.contact__parent .info .links__contact a i:hover {
+    background-color: var(--color-text);
+    border-color: var(--second-color-text);
+    color: var(--second-color-text);
+}
+.contact__parent form {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 50px;
+    border-radius: 50px;
+    border: 1px solid var(--second-color-text);
+    box-shadow: 40px 40px 0 var(--first-color);
+}
+.contact__parent form input {
+    width: 100%;
+    outline: none;
+    border: 1px solid var(--second-color-text);
+    padding: 15px 20px;
+    border-radius: 50vw;
+    background-color: var(--first-color);
+    caret-color: var(--second-color-text);
+}
+.contact__parent form textarea {
+    width: 100%;
+    height: 200px;
+    resize: none;
+    outline: none;
+    border: 1px solid var(--second-color-text);
+    background-color: var(--first-color);
+    padding: 15px 20px;
+    border-radius: 20px;
+    caret-color: var(--second-color-text);
+}
+.contact__parent form input[type="submit"] {
+    width: fit-content;
+    padding: 15px 35px;
+    border: 1px solid var(--second-color-text);
+    transition: var(--main-transition);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--second-color-text);
+    background-color: var(--color-text);
+}
+.contact__parent form input[type="submit"]:hover {
+    background-color: var(--second-color-text);
+    color: var(--color-text);
+}
+/* =============== END CONTACT STYLE ================ */
+
+/* =============== START FOOTER STYLE ================ */
+footer {
+    background-color: var(--first-color);
+    padding: var(--main-padding) 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+footer .social a i{
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+    margin-left: 15px;
+    padding: 15px;
+    color: var(--color-text);
+    background-color: var(--second-color-text);
+    border-radius: 10px;
+    border: 2px solid var(--second-color-text);
+    transition: var(--main-transition);
+}
+footer .social a i:hover {
+    background-color: var(--first-color);
+    color: var(--second-color-text);
+    box-shadow: 10px 10px 0 var(--second-color-text);
+    transform: translate(-10px, -10px);
+}
+footer h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    color: var(--first-color-text);
+}
+footer h1 a {
+    text-decoration: none;
+    color: var(--grad-f-color);
+}
+/* =============== END FOOTER STYLE ================ */
+
+
+/* =============== END MAIN STYLE ================ */
